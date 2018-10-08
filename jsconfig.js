@@ -4,7 +4,7 @@
     "paths": {
       "*": ["src/*"],
       "store/*": ["src/store/*"],
-      "components": ["src/components/*"]
+      "comp": ["src/components/*"]
     }
   }
 }

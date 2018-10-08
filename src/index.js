@@ -1,24 +1,12 @@
-import React from 'react' 
-import ReactDOM from 'react-dom' 
-import createBrowserHistory from 'history/createBrowserHistory' 
-import { Provider } from 'mobx-react' 
-import { RouterStore, syncHistoryWithStore } from 'mobx-react-router' 
-import { Router } from 'react-router' 
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'mobx-react'
+import { Router } from 'react-router'
+import stores from './store'
 
-import ServerMessageStore from 'store/ServerMessageStore'
-import { CountStore } from 'store/CountStore'
+import history from './utils/history'
+
 import App from 'comp/App'
-
-const browserHistory = createBrowserHistory() 
-const routingStore = new RouterStore() 
-
-const stores = {
-  routing: routingStore,
-  counter: CountStore,
-  messages: ServerMessageStore
-} 
-
-const history = syncHistoryWithStore(browserHistory, routingStore) 
 
 ReactDOM.render(
   <Provider {...stores}>
