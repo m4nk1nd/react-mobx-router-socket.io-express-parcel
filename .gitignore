@@ -59,3 +59,10 @@ typings/
 
 # next.js build output
 .next
+
+
+# by m4nk1nd - skip cache and dist directories
+.cache/
+dist/
+
+yarn.lock
