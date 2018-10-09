@@ -20,10 +20,12 @@ const transport = (function (socket) {
       })
     },
     dispose: () => {
-      Object.keys(owners).forEach(key => {
-        Object.keys(owners[key].on).forEach(namespace => {
-          socket.off(namespace, owners[key].on[namespace])
+      Object.keys(owners).forEach(owner => {
+        Object.keys(owners[owner].on).forEach(namespace => {
+          socket.off(namespace, owners[owner].on[namespace])
+          delete (owners[owner].on[namespace])
         })
+        delete (owners[owner])
       })
     }
   }

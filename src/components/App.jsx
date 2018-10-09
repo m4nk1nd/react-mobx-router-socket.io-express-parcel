@@ -3,9 +3,7 @@ import { inject, observer } from 'mobx-react'
 import { Route } from "react-router-dom"
 import { withRouter } from 'react-router'
 
-import Home from './Home'
-import Counter from './Counter'
-import Messages from './Messages'
+import { Home, Counter, Messages} from 'comp'
 
 @inject('routing')
 @observer class App extends Component {

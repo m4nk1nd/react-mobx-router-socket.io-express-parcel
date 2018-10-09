@@ -13,7 +13,7 @@ class ServerMessageStore {
     transport.socket.emit('server_messages')
   }
 
-  @observable server_messages = ['one']
+  @observable server_messages = []
   @observable title = ''
 
   @action.bound

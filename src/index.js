@@ -5,7 +5,7 @@ import { Router } from 'react-router'
 import stores from 'store'
 import { transport } from 'utils/socket'
 import history from 'utils/history'
-import App from 'comp/App'
+import App from 'comp'
 
 class AppWrapper extends React.Component {
 
