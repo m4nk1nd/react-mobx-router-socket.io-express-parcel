@@ -21,6 +21,11 @@ io.on('connection', function (socket) {
   socket.on('server_messages', function () {
     socket.emit('server_messages', server_messages)
   })
+
+  socket.on('add_message', function (message) {
+    server_messages.push({ ...message, id: server_messages.length })
+    socket.emit('server_messages', server_messages)
+  })
 })
 
 app.use(bundler.middleware())
