@@ -1,5 +1,5 @@
-import { transport } from '../utils/socket'
-import { observable, action } from 'mobx'
+import { transport } from 'utils/socket'
+import { observable, action, computed } from 'mobx'
 
 class ServerMessageStore {
 
@@ -24,6 +24,11 @@ class ServerMessageStore {
   @action.bound
   titleChange(e) {
     this.title = e.target.value
+  }
+
+  @computed 
+  get isDisabled() {
+    return this.title.trim() === '' ? true : false
   }
 
   @action.bound
